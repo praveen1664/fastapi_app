@@ -3,25 +3,25 @@ kind: Deployment
 metadata:
   #creationTimestamp: null
   labels:
-    app: mytree
-  name: mytree
+    app: banyantree
+  name: banyantree
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mytreeapi
+      app: banyantreeapi
   strategy: {}
   template:
     metadata:
       #creationTimestamp: null
       labels:
-        app: mytreeapi
+        app: banyantreeapi
     spec:
       containers:
-      - image: mytree
-        name: mytree
+      - image: banyantree
+        name: banyantree
         imagePullPolicy: Never
         resources: {}
         ports:
-          - containerPort: 8080
+          - containerPort: 80
 status: {}
