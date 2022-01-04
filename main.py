@@ -11,7 +11,7 @@ def tree():
     return {"myFavouritrTree":"Banyan Tree"}
 
 def main():
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+    uvicorn.run(app, port=80, host='0.0.0.0')
 
 if __name__ == '__main__':
     main()
