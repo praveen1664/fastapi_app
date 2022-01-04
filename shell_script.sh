@@ -1,6 +1,7 @@
 #!/bin/sh
 IMAGE_NAME="mytree"
-minikube start
+#uncomment below line if minikube not running
+#minikube start
 eval $(minikube docker-env) 
 build() {
   docker build -t $IMAGE_NAME .
@@ -9,6 +10,6 @@ build() {
     error "Docker image build failed !" && exit 100
 }
 kubectl create -f manifest.yml
-sleep(120)
+sleep 2m
 kubectl get pods -o wide
  
