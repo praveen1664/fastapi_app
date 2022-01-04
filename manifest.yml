@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  #creationTimestamp: null
+  labels:
+    app: mytree
+  name: mytree
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mytreeapi
+  strategy: {}
+  template:
+    metadata:
+      #creationTimestamp: null
+      labels:
+        app: mytreeapi
+    spec:
+      containers:
+      - image: mytree
+        name: mytree
+        imagePullPolicy: Never
+        resources: {}
+        ports:
+          - containerPort: 8080
+status: {}
